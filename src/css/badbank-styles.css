@@ -1,0 +1,385 @@
+/* Global Custom Properties
+  This section defines a set of CSS variables that hold theme colors and commonly used values.
+  These are accessible globally and ensure consistency and ease of maintenance across the site. */
+:root {
+  /* Nav colors */
+  --active-nav-color:       #FF5733;      /* Color for indicating active nav element, nav-item or nav-brand */
+  --nav-pipe-color:         #aebdc0;      /* Color for pipe separators in nav, using border-right */
+  --tooltip-color:          #FA4B7A;      /* Color for tooltips on nav-item on hover */
+  --link-nav-color:         #44d1ff;      /* Color for clickable nav-item text */
+  --link-nav-hover:         #12a6ec;      /* Color for hover ib nav-item text */
+  --link-nav-active:        #ffffff;      /* Color for hover active nav-item text */
+
+  /* Card colors */
+  --create-account-color:   #004085;      /* Color for create account card */
+  --deposit-card-color:     #1B4D3E;      /* Color for deposit card  */
+  --withdrawal-card-color:  #800020;      /* Color for withdrawal card */
+  --all-data-color:         #3B719F;      /* Color for cards on All Data page */
+  --light-text-color:       whitesmoke;   /* Color for cards on All Data page */
+
+  /* Colors for success alerts within cards  */
+  --alert-create-text:      #303234;      /* color for text of successful acct create alert */
+  --alert-create-bg:        #5bc0de;      /* Color for background of successful acct create alert */
+  --alert-create-border:    #49a2c2;      /* Color for border of successful acct create alert */
+
+  --font-weight-thin:         100;
+  --font-weight-light:        300;
+  --font-weight-regular:      400;
+  --font-weight-medium:       500;
+  --font-weight-medium-bold:  600;
+  --font-weight-bold:         700;
+  --font-weight-black:        900;
+
+  --spa-app-width:            780px;
+  --card-full-width:          770px;
+}
+
+/* Body default styling */
+
+body {
+  font-family: 'Raleway', sans-serif !important;
+  color: #111613;
+  background-color: lightsteelblue; 
+}
+
+/* Google Font font weights - Raleway */
+
+/* Thin weight */
+.raleway-thin {
+  font-family: 'Raleway', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* Light weight */
+.raleway-light {
+  font-family: 'Raleway', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Regular weight */
+.raleway-regular {
+  font-family: 'Raleway', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Medium weight */
+.raleway-medium {
+  font-family: 'Raleway', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Medium weight */
+.raleway-medium-bold {
+  font-family: 'Raleway', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Bold weight */
+.raleway-bold {
+  font-family: 'Raleway', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Black weight */
+.raleway-black {
+  font-family: 'Raleway', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Custom navbar styling */
+
+.navbar-brand, .nav-link {
+  font-size: 1.5rem !important; 
+}
+
+.custom-link-color {
+  color: var(--link-nav-color); 
+}
+
+.custom-link-color:hover {
+  color: var(--link-nav-hover); 
+}
+
+/* Add a right border to each nav-link */
+.navbar-nav .nav-link {
+  border-right: 2px solid  var(--nav-pipe-color);
+  padding: 17px;
+  height: 40px;                              /* Custom height of pipe-like separator */
+  display: flex;
+  align-items: center;                       /* This will vertically center the text */
+}
+
+/* Increase specificity for the last nav-link */
+.navbar-nav > li:not(:last-child) > .nav-link {
+  border-right: 2px solid var(--nav-pipe-color);
+  padding: 17px;
+
+}
+/* Remove the border for the last nav-link */
+.navbar-nav > li:last-child > .nav-link {
+  border-right: none;
+  padding: 17px; 
+}
+
+/* Tooltip styling */
+.custom-tooltip {
+  font-size: 21px;
+}
+
+.custom-tooltip .tooltip-inner {
+  max-width: 1000px;                          /* for widening tooltips */
+  background-color: var(--active-nav-color); 
+}
+
+/* Manually create tooltip arrow as triangle */
+.custom-tooltip .tooltip-inner::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;                               /* Position the arrow above the tooltip */
+  left: 12%;                                   /* Move the arrow to the left */
+  margin-bottom: -15px;                       /* Adjust the size of the arrow */
+  border-width: 15px;                         /* Make the arrow larger */
+  border-style: solid;
+  border-color: transparent transparent var(--active-nav-color) transparent; /* The third value is the arrow color */
+}
+
+/* Different styling for selected navbar element, depending on nav-brand vs nav-item */
+
+.navbar-brand {
+  height: 181px;                              /* Fixed height */
+  width: 181px;                               /* Fixed width */
+  display: flex;                              /* Enables the use of flexbox properties */
+  align-items: center;                        /* Centers the content vertically */
+  justify-content: center;                    /* Centers the content horizontally */
+  border-radius: 50%;                         /* Creates a perfect circle */
+}
+
+.navbar-brand:hover {
+  background-color: var(--link-nav-hover);    /* Effectively creates a circular hover border around logo */
+}
+
+.active-nav-brand {
+  background-color: var(--active-nav-color);  /* Effectively creates a circular highlight border around logo */
+}
+
+.nav-link {
+  border-bottom: 3px solid transparent;       /* Adds an invisible border, so text doesn't jump with underline effect */
+}
+
+.active-nav-item {
+  color: var(--link-nav-active);              /* Sets the active text color */
+  position: relative;                         /* Establishes a positioning context for pseudo-elements */
+}
+
+.active-nav-item::after {
+  content: '';                                /* Required for the pseudo-element to display */
+  display: block;                             /* Treats the pseudo-element like a block-level element */
+  margin: 0 auto;                             /* Centers the underline */
+  height: 3px;                                /* Height of the underline */
+  width: 83%;                                 /* Width of the underline as a percentage of the element's total width */
+  background-color: var(--active-nav-color);  /* Color of the underline */
+  position: absolute;                         /* Positions the pseudo-element in relation to its parent */
+  bottom: -3px;                               /* Positions the underline just below the element */
+  left: 0;                                    /* Aligns the pseudo-element to the left edge of the parent */
+  right: 0;                                   /* Aligns the pseudo-element to the right edge of the parent */
+}
+
+/* React Bootstrap Card styling, customized per page */
+
+.card {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  width: 50%; /* Adjust the width as necessary */
+}
+
+.login-card {
+  width: var(--card-full-width); /* Or any other width that you want */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.home-card {
+  width: var(--card-full-width); 
+  margin-right: auto; /* Align the card to the left */
+}
+
+.home-card .card-header {
+  font-size: 18px;
+  font-weight: var(--font-weight-regular);
+}
+
+.home-card .card-title {
+  font-size: 27px;
+  font-weight: var(--font-weight-medium-bold);
+}
+
+.home-card .card-text {
+  font-size: 22px;
+  font-style: italic;
+  font-weight: var(--font-weight-medium);
+}
+
+.create-account-card {
+  background-color:  var(--create-account-color);
+  width: var(--card-full-width); 
+  margin-right: auto; /* Align the card to the left */
+}
+
+.create-account-card .card-header {
+  font-size: 19px;
+  font-weight: var(--font-weight-medium);
+}
+
+.alert-success-create-account {
+  color: var(--alert-create-text);
+  background-color: var(--alert-create-bg);
+  border-color: var(--alert-create-border);
+  font-weight: var(--font-weight-medium-bold);
+  font-size: 19px;
+  text-align: center;
+}
+
+.deposit-card {
+  width: var(--card-full-width); 
+  margin-right: auto; /* Align the card to the left */
+  color: var(--light-text-color);
+  background-color: var(--deposit-card-color);
+  font-weight: var(--font-weight-medium-bold);
+}
+
+.deposit-card .card-header {
+  font-size: 18px;
+  font-weight: var(--font-weight-bold);
+}
+
+.alert-success-deposit {
+  color: #36454f;
+  background-color: #dff0d8;
+  border-color: #96c8a2;
+  font-weight: var(--font-weight-medium-bold);
+  font-size: 19px;
+  text-align: center;
+}
+
+.withdrawal-card {
+  width: var(--card-full-width); 
+  background-color: var(--withdrawal-card-color); 
+  color: var(--light-text-color);
+}
+
+.withdrawal-card .card-header {
+  font-size: 18px;
+  font-weight: var(--font-weight-bold);
+}
+
+.alert-success-withdraw {
+  color: #36454F;
+  background-color: #FFD1D1;
+  border-color: #C06979;
+  /* color: #303234; var(--alert-create-text);
+  background-color: var(--alert-create-bg);
+  border-color: var(--alert-create-border); */
+  font-weight: var(--font-weight-medium-bold);
+  font-size: 19px;
+  text-align: center;
+}
+
+.all-data-card {
+  width: var(--card-full-width);  
+  margin-right: auto; /* Align the card to the left */
+  color: var(--light-text-color);
+  background-color: var(--all-data-color); 
+  font-size: 19px;
+}
+
+.all-data-title {
+  font-weight: var(--font-weight-bold);
+  font-size: 28px;
+  text-align: left;
+  width: var(--card-full-width);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+
+/* Center everything, while still keeping background color of navbar spanning 100% of viewport */
+
+.navbar {
+  display: flex; /* Use flexbox to center the child elements */
+  justify-content: center; /* This will center the children in the middle */
+  background-color: #333; /* Example background color */
+}
+
+.navbar-inner {
+  align-items: center; /* Aligns items vertically */
+  max-width: var(--spa-app-width); /* Set your desired max-width */
+  width: 100%; /* Ensures it spans to the max-width */
+  display: flex; /* Use flexbox for inner alignment */
+  justify-content: flex-start; /* Aligns children (navbar-brand) to the start (left) */
+}
+
+.navbar-brand {
+  margin-right: auto; /* Keeps the navbar-brand on the left */
+}
+
+.navbar-nav {
+
+  white-space: nowrap; /* Prevents nav-items from wrapping */
+  margin-right: auto; /* Pushes the navbar-nav to the left */
+}
+
+.route-content {
+  max-width: var(--spa-app-width);
+  margin: 0 auto; /* Centers the content within the viewport */
+  padding-left: 10px;
+}
+
+/* Fade Transition for React Transition Group animations */
+.fade-enter,
+.fade-appear {
+  opacity: 0;
+}
+.fade-enter-active,
+.fade-appear-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-in;
+}
+
+/* .fade-in {
+  animation: fadeIn 1s ease-in-out forwards;
+} */
+
+.all-data-card {
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
