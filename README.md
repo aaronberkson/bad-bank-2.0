@@ -37,8 +37,9 @@ Bad Bank 2.0 is a full-stack web application designed to provide a secure and in
     
 
 **Screenshots**
-
-[Insert screenshots or a GIF demonstrating the app's features, such as login, account creation, balance inquiry, and transaction history.]
+<img width="1136" alt="Screenshot 2024-10-21 at 12 22 38 AM" src="https://github.com/user-attachments/assets/a8af655f-1ee2-4f42-81fe-495dbe031c10">
+<img width="1136" alt="Screenshot 2024-10-21 at 12 23 05 AM" src="https://github.com/user-attachments/assets/256c6e55-0908-4096-8f23-0ea3fbab10c5">
+<img width="1136" alt="Screenshot 2024-10-21 at 12 23 19 AM" src="https://github.com/user-attachments/assets/3bfb3015-4c1e-492f-8558-94310a919899">
 
 **Technology Stack**
 
